@@ -1,0 +1,42 @@
+<view class='cu-custom container'>
+  <view class="cu-bar fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <!-- <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 返回
+    </navigator> -->
+    <view class='content' style='top:{{StatusBar}}px;'>商店</view>
+  </view>
+</view>
+<!-- <swiper class="screen-swiper round-dot" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500">
+  <swiper-item wx:for="{{4}}" wx:key>
+    <image src="https://image.weilanwl.com/img/4x3-{{index+1}}.jpg" mode='aspectFill'></image>
+  </swiper-item>
+</swiper> -->
+<view class="VerticalBox">
+  <scroll-view class="VerticalNav nav" scroll-y scroll-with-animation scroll-top="{{VerticalNavTop}}" style="height:calc(100vh)">
+    <view class="cu-item {{index==TabCur?'text-green cur':''}}" wx:for="{{list}}" wx:key bindtap='tabSelect' data-id="{{index}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh )" scroll-into-view="main-{{MainCur}}" bindscroll="VerticalMain">
+    <view class="padding-top padding-lr" wx:for="{{list}}" wx:key id="main-{{index}}">
+      <view class='cu-bar solid-bottom bg-white'>
+        <view class='action'>
+          <text class='icon-title text-green'></text> {{item.name}}</view>
+      </view>
+      <view class="cu-list menu-avatar">
+        <view class='cu-list-li text-center' wx:for="{{goodsList[item.id]}}" wx:key >
+          <image class='cu-list-image'src='{{item.productUrl}}'></image>
+          <view class='cu-list-name text-left'>{{item.productName}}</view>
+          <view class='cu-list-vakue text-left'>{{item.price}}</view>
+          <view class='grid col-2'>
+            <view class='cu-list-jindou text-left'>微金币{{item.price}}</view>
+            <view class='cu-list-btn'>
+              <button class='cu-btn bg-olive button-hover text-right cu-list-duihuan' data-Id='{{item.id}}' data-price='{{item.price}}' data-name='{{item.productName}}'bindtap='goPage'>兑换</button>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </scroll-view>
+</view>

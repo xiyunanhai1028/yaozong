@@ -1,0 +1,30 @@
+<!--pages/PersonalCenter/PersonalCenter.wxml-->
+<view class='person'>
+</view>
+<view class='person-center'>
+  <view class='person-top'>
+     <image class='person-top-image' src='{{userInfo.avatarUrl}}'></image>
+     <view class='name'>{{userData.userName}}</view>
+     <view class='zhanghao'>{{userData.phone}}</view>
+     <view class='grid col-2 margin-bottom text-center'>
+      <view class='jindou'>我的微金币</view>
+      <view class='jindou'>{{userData === null ? '0': userData.goldNum}}</view>
+     </view>
+  </view>
+  <view class='person-li' bindtap='goPage' data-url='../../pages/goldenBeans/goldenBeans'>
+    <image src="/images/czjd.png"></image>
+    <view>充值微金币</view>
+  </view>
+  <view class='person-li' bindtap='goPage' data-url='../../pages/stepNumber/stepNumber'>
+    <image src="/images/dhbs.png"></image>
+    <view>步数兑换微金币</view>
+  </view>
+  <view class='person-li' bindtap='goPage' data-url='../../pages/forecastRecord/forecastRecord'>
+    <image src="/images/ycjl.png"></image>
+    <view>预测记录</view>
+  </view> 
+  <view class='person-li' bindtap='goPage'  data-url='../../pages/records/records'>
+    <image src="/images/ycjl.png" ></image>
+    <view>兑换记录</view>
+  </view>         
+</view>

@@ -1,0 +1,19 @@
+<!--pages/CommentArea/CommentArea.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" >
+      <text class='icon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>评论区</view>
+  </view>
+</view>  
+<view class='CommentArea'>
+<form>
+  <view class="cu-form-group margin-top">
+    <textarea data-placeholder="说点什么吧" maxlength="-1" disabled="{{modalName!=null}}" placeholder-class="placeholder" class="{{textareaAValue?'value':''}}" bindinput="textareaAInput"></textarea>
+  </view>
+</form>
+</view>
+<view class='tjiao-btn'>
+  <button class='cu-btn bg-olive button-hover' bindtap='tijiaoBtn'>提交评论</button>
+</view>

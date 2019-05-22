@@ -1,0 +1,93 @@
+/* pages/FortuneKing/FortuneKing.wxss */
+.wang-zhe-bang {
+  padding: 30rpx;
+  margin-top: 160rpx;
+}
+.wangzhebang-title {
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  /* line-height:83rpx; */
+  text-align: center;  
+}
+.mumu-li image {
+  width: 58rpx;
+  height: 58rpx;
+  border-radius: 100%;
+  background-color: rebeccapurple;
+  display: inline-block;
+  vertical-align: middle;
+}
+.mumu-li {
+  width:690rpx;
+  /* height:120rpx; */
+  background:rgba(255,255,255,1);
+  box-shadow:0px 7px 10px 0px rgba(12,51,171,0.08);
+  border-radius:10rpx;
+  margin-top: 30rpx;
+  padding: 40rpx 20rpx;
+}
+.mumu-li-l {
+  display: inline-block;
+  vertical-align: middle;  
+}
+.mumu-li-1 {
+  padding: 0 50rpx;
+}
+.mumu-li-2 {
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:#E50303;  
+  padding: 0 50rpx;
+}
+.mumu-li-3 {
+  font-size:24rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1); 
+  padding-left: 160rpx; 
+  }
+
+  .more-btn {
+    width:690rpx;
+    height:82rpx;
+    background:rgba(255,255,255,1);
+    box-shadow:0rpx 7rpx 10rpx 0rpx rgba(12,51,171,0.08);
+    border-radius:10rpx;  
+    margin: 0 auto;
+    margin-top: 30rpx;
+    text-align: center;
+    line-height: 82rpx;
+    font-size:24rpx;
+    font-family:PingFangSC-Regular;
+    font-weight:400;
+    color:rgba(102,102,102,1);
+    line-height:83rpx;   
+  }
+
+  .jindou {
+    height: 70rpx;
+    line-height: 70rpx;
+    /* border:1px solid rgba(182,181,180,1); */
+  }
+
+  .jindou view{
+    width: 80%;
+    margin: 0 auto;
+    height: 70rpx;
+    line-height: 70rpx;
+    border:1rpx solid rgba(182,181,180,1);
+  }
+  .jindou .active {
+    border:1rpx solid rgba(73,171,242,1);
+    color: rgba(73,171,242,1);
+  }
+  .text-red {
+    color: red;
+  }
+  .caifuwangzhe {
+    float: right;
+    color: rgba(73,171,242,1);
+  }

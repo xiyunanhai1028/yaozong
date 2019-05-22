@@ -1,0 +1,23 @@
+<!--pages/forecastRecord/forecastRecord.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" >
+      <text class='icon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>预测记录</view>
+  </view>
+</view>  
+<view class='records cu-list menu'>
+    <view class="cu-item" wx:for="{{bushuList}}">
+      <view class="content padding-tb-sm">
+        <view>
+          <text class="icon-refund text-orange margin-right-xs"></text>兑换金豆</view>
+        <view class="text-gray text-sm">
+          <text class="icon-infofill margin-right-xs text-white"></text> {{item.predictTime}}</view>
+      </view>
+      <view class="action text-red">
+        <!-- <switch class="switch-sex sm" bindchange="switchSex"></switch> -->
+        {{item.goldNum}}
+      </view>
+    </view>
+</view>

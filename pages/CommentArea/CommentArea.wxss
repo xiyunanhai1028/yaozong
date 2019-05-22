@@ -1,0 +1,15 @@
+/* pages/CommentArea/CommentArea.wxss */
+.CommentArea {
+  margin-top: 150rpx;
+}
+.tjiao-btn  {
+  text-align: center;
+  margin-top: 40rpx;
+}
+.tjiao-btn button {
+  width:690rpx;
+  height:90rpx;
+  background:rgba(73,171,242,1);
+  border-radius:10rpx;
+
+}

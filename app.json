@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/upsAndDowns/upsAndDowns",
+    "pages/commodity/commodity",
+    "pages/PersonalCenter/PersonalCenter",
+    "pages/ShareIndex/ShareIndex",
+    "pages/selectAddress/selectAddress",
+    "pages/addAddress/addAddress",
+    "pages/eiteAddress/eiteAddress",
+    "pages/stepNumber/stepNumber",
+    "pages/records/records",
+    "pages/forecastRecord/forecastRecord",
+    "pages/CommentArea/CommentArea",
+    "pages/rules/rules",
+    "pages/FortuneKing/FortuneKing",
+    "pages/goldenBeans/goldenBeans"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#0081ff",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/upsAndDowns/upsAndDowns",
+        "iconPath": "/images/zd1.png",
+        "selectedIconPath": "/images/zd2.png",
+        "text": "涨跌"
+      },
+      {
+        "pagePath": "pages/commodity/commodity",
+        "iconPath": "/images/sp1.png",
+        "selectedIconPath": "/images/sp2.png",
+        "text": "商品"
+      },
+      {
+        "pagePath": "pages/PersonalCenter/PersonalCenter",
+        "iconPath": "/images/wd1.png",
+        "selectedIconPath": "/images/wd2.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

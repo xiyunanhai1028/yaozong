@@ -1,0 +1,44 @@
+<!--pages/selectAddress/selectAddress.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>选择地址</view>
+  </view>
+</view>
+<view class='selectAddress'>
+  <radio-group class="block" bindchange="bindchange">
+   <view class='address-li' wx:for="{{addressList}}">
+     <view class='address-l-top'>
+       <view class='address-l-name'>{{item.name}}</view>
+       <view  class='address-l-phone'>{{item.phone}}</view>
+     </view>
+     <view class='address-l-center'>
+{{item.address}}</view>
+    <view>
+    <view class="cu-form-group">
+      <view class='xuanze'>
+        <radio class='round blue' checked="{{item.current === '0'}}" value='{{item.id}}'></radio>
+        <view class='xuanze-dizhi'>选择该地址</view>
+      </view>
+      <view class='xuanze'></view>
+      <view class='xuanze' bindtap='goPage' data-url='../../pages/eiteAddress/eiteAddress' data-data='{{item}}'>
+       <text class='icon-edit lg text-gray zitidaxiao'></text>
+      编辑</view>
+      <view class='xuanze' bindtap='delGoods' data-data='{{item}}'>
+       <text class='icon-deletefill lg text-gray zitidaxiao'></text>
+      删除
+      </view>
+    </view>
+   </view>
+   </view>
+     </radio-group>
+     <view class='tianjiadizhi text-center'>
+     <button class='cu-btn bg-blue text-right cu-list-duihuan' bindtap='goPage' data-url='../../pages/addAddress/addAddress' >添加地址</button>
+</view>
+</view>
+
+<view class='add-address' bindtap='duihuan'>
+   确认兑换
+</view>

@@ -1,0 +1,244 @@
+<!--pages/upsAndDowns/upsAndDowns.wxml-->
+<view class='upsAndDowns'>
+    <image class='bjing' src='/images/bjing.png'></image>
+    <view class='huodongguize'  bindtap='goPage' data-url='../../pages/rules/rules'>活动规则</view>
+    <view class='upsAndDowns-ab'>
+      <view class='bjing-zctitle'>
+        <image class='bjing-title' src='/images/zhangdie.png'></image>
+        <!-- 预测涨跌赢王者称号 -->
+      </view>
+      <view class='bjing-dqjc'>
+        <view class='span'>当前奖池</view>
+        <view class='yuan'>
+           <view class='yuan-l' wx:for="{{currentGolds}}">{{item}}</view>
+        </view>
+        <view class='span-r'>微金币</view>
+      </view>
+
+        <!-- <view class='danmu-title'>弹幕</view> -->
+    <view class='danmu-wrap'>
+      <view class='danmu-wr'>
+        <view class='recycler' style="top:{{topDistance}}rpx">
+         <view class='danmu-li' wx:for="{{commentsData}}">
+          <view class='danmu-box'>
+            <image src='/images/laba.png'></image>
+            <view>{{item.comments}}</view>
+          </view>
+        </view>
+        </view>
+       
+      </view>
+        <view class='shuoliangju'  bindtap='goPage' data-url='../../pages/CommentArea/CommentArea'>
+          <image  src='/images/shuoliangju.png'></image>
+        </view>
+      </view>
+      <view class='szzs-wrap'>
+        <view class='szzs-title'>
+          <view class='szzs-l'>{{time}}  上证指数</view>
+          <!-- <view class='szzs-c'>29665.12+0.23%</view> -->
+          <view class='szzs-r'  bindtap='goPage' data-url='../../pages/ShareIndex/ShareIndex' data-index="1">大盘详情>></view>
+        </view>
+        <view class="padding">
+          <view class="cu-progress active round bg-olive">
+            <view class="bg-red round" style="width:{{loading?shangzhengUp:''}};">{{shangzhengUp == 0 ? '' : shangzhengUp}}</view>
+            <view class="bg-olive round" style="width:{{loading?shangzhengDown:''}};">{{shangzhengDown == 0 ? '' : shangzhengDown}}</view>
+            <!-- <view class="bg-cyan" style="width:{{loading?'25%':''}};">25%</view> -->
+          </view>
+        </view>
+
+        <view class='grid col-2 margin-bottom text-center'>
+          <!-- <view class='shangzheng-zs'>上证指数</view> -->
+          <view>
+            <!-- <button class='cu-btn bg-red button-hover press-down-btn' bindtap="showModal" data-target="DialogModal2" data-isup='0' data-guPiaotype= "0">看涨</button> -->
+            <button class='press-down red-btn-bg' bindtap="showModal" data-target="DialogModal2" data-isup='0' data-guPiaotype= "0">看涨</button>
+          </view>
+          <view>
+           <!-- <button class='cu-btn bg-olive button-hover' bindtap="showModal" data-target="DialogModal2" data-isup='1' data-guPiaotype= "0">看跌</button> -->
+           <button class='press-down green-btn-bg' bindtap="showModal" data-target="DialogModal2" data-isup='1' data-guPiaotype= "0">看跌</button>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='tips-txt'>用户对没个交易日涨跌尽可预言一次，每次可投10-200金豆</view> -->
+    <!-- <view class='wang-zhe-bang'>
+       <view class='wangzhebang-title'>预测王者排行榜 <view  bindtap='goPage' data-index="1" data-url='../../pages/FortuneKing/FortuneKing' class='caifuwangzhe'>财富排行榜>></view></view>
+    </view> -->
+
+
+
+
+
+
+<!-- <view class='cu-custom'>
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" >
+      <text class='icon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>财富排行榜</view>
+  </view>
+</view>   -->
+<view class='wang-zhe-bang'>
+  <scroll-view scroll-x class="bg-white nav text-center">
+  <view class="cu-item {{index==TabCur?'text-blue cur':''}}" wx:for="{{tabList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{tabList[index]}}
+  </view>
+</scroll-view>
+
+   <view class='mumu-ul'  wx:if="{{codeIndex === 0}}">
+      <!-- <view class='mumu-li' wx:for="{{yucePaiLIst}}"  wx:for-index="index"> -->
+      <view class='list-box' wx:for="{{yucePaiLIst}}"  wx:for-index="index">
+        <!-- <view class='mumu-li-l mumu-li-1'>
+           <image src='/images/huangguan_1.png' class='huangguan' wx:if="{{index==0}}"></image>
+            <image src='/images/huangguan_2.png' class='huangguan' wx:elif="{{index==1}}"></image>
+            <image src='/images/huangguan_3.png' class='huangguan' wx:elif="{{index==2}}"></image>
+        </view> -->
+
+        <!-- <image src='/images/laba.png' class='p-iv'></image>
+        <view class='mumu-li-l mumu-li-1'>
+          <view>{{item.userName}}</view>
+          <view>热血预言家</view>
+        </view>
+        <view class='mumu-li-l mumu-li-2'></view>
+        <view class='mumu-li-l mumu-li-3 text-red'>{{item.num}}次</view> -->
+        <view class='huangguan-box'>
+            <image src='/images/huangguan_1.png' class='huangguan' wx:if="{{index==0}}"></image>
+            <image src='/images/huangguan_2.png' class='huangguan' wx:elif="{{index==1}}"></image>
+            <image src='/images/huangguan_3.png' class='huangguan' wx:elif="{{index==2}}"></image>
+            <view class='huangguan' wx:else>{{index+1}}</view>
+        </view>
+        <view class='picture-box'>
+          <image src='/images/laba.png'></image>
+        </view>
+        <view class='content-box'>
+          <view>{{item.userName}}</view>
+          <view>热血预言家</view>
+        </view>
+        <view class='cishu'>
+          <view class='mumu-li-l mumu-li-3 text-red'>{{item.num}}次</view>
+        </view>
+      </view>                       
+   </view>
+
+
+   <view class='mumu-ul' wx:if="{{codeIndex === 1}}">
+      <!-- <view class='mumu-li' wx:for="{{yucePaiLIst1}}" wx:for-index="index">
+        <image src='/images/huangguan_1.png' class='huangguan' wx:if="{{index==0}}"></image>
+        <image src='/images/huangguan_2.png' class='huangguan' wx:elif="{{index==1}}"></image>
+        <image src='/images/huangguan_3.png' class='huangguan' wx:elif="{{index==2}}"></image>
+        <view class='huangguan' wx:else>{{index}}</view>
+        <image src='/images/laba.png' class='p-iv'></image>
+        <view class='mumu-li-l mumu-li-1'>
+          <view>{{item.userName}}</view>
+          <view>财富王者</view>
+        </view>
+        <view class='mumu-li-l mumu-li-2'></view>
+        <view class='mumu-li-l mumu-li-3 text-red'>{{item.goldNum}}微金币</view>
+      </view>                        -->
+
+      <view class='list-box' wx:for="{{yucePaiLIst1}}"  wx:for-index="index">
+        <view class='huangguan-box'>
+            <image src='/images/huangguan_1.png' class='huangguan' wx:if="{{index==0}}"></image>
+            <image src='/images/huangguan_2.png' class='huangguan' wx:elif="{{index==1}}"></image>
+            <image src='/images/huangguan_3.png' class='huangguan' wx:elif="{{index==2}}"></image>
+            <view class='huangguan' wx:else>{{index+1}}</view>
+        </view>
+        <view class='picture-box'>
+          <image src='/images/laba.png'></image>
+        </view>
+        <view class='content-box'>
+          <view>{{item.userName}}</view>
+          <view>财富王者</view>
+        </view>
+        <view class='cishu'>
+          <view class='mumu-li-l mumu-li-3 text-red'>{{item.num}}微金币</view>
+        </view>
+      </view>  
+
+   </view>  
+</view>
+
+
+
+
+
+
+      <!-- <view class='bjing-dqjc'>
+        <view class='span'>当前奖池</view>
+        <view class='yuan'>
+           <view class='yuan-l' wx:for="{{currentGolds1}}">{{item}}</view>
+        </view>
+        <view class='span-r'>金豆</view>
+        
+      </view> -->
+       <!-- <view class='szzs-wrap'>
+        <view class='szzs-title'>
+          <view class='szzs-l'>{{time}} 恒生指数</view>
+         
+          <view class='szzs-r'  bindtap='goPage' data-url='../../pages/ShareIndex/ShareIndex' data-index="2">大盘详情>></view>
+        </view>
+        <view class="padding">
+          <view class="cu-progress striped active round bg-olive">
+            <view class="bg-red round" style="width:{{loading? daoqongsiUp:''}};">{{daoqongsiUp == 0 ? '': daoqongsiUp}}</view>
+            <view class="bg-olive round" style="width:{{loading? daoqongsiDown:''}};">{{daoqongsiDown == 0 ? '': daoqongsiDown}}</view>
+           
+          </view>
+        </view>
+        <view class='grid col-3 margin-bottom text-center'>
+          <view class='shangzheng-zs'>恒生指数</view>
+          <view>
+            <button class='cu-btn bg-red button-hover'  bindtap="showModal" data-target="DialogModal2" data-isup='0' data-guPiaotype= "1">看涨</button>
+          </view>
+          <view>
+           <button class='cu-btn bg-olive button-hover' bindtap="showModal" data-target="DialogModal2" data-isup='1' data-guPiaotype= "1">看跌</button>
+          </view>
+        </view>
+      </view> -->
+
+
+      <!-- <view class='wang-zhe-bang'>
+        <view class='wangzhebang-title'>预测王者排行榜 <view data-index="2"  bindtap='goPage' data-url='../../pages/FortuneKing/FortuneKing' class='caifuwangzhe'>财富排行榜>></view></view>
+      </view> -->
+
+    </view>
+    </view>
+
+
+    <view class="cu-modal {{modalName=='DialogModal2'?'show':''}}">
+      <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+          <view class="content">押注</view>
+          <view class="action" bindtap="hideModal">
+            <text class="icon-close text-red"></text>
+          </view>
+        </view>
+        <view class="padding-xl">
+          <view class='grid col-3 margin-bottom text-center'>
+            <view class='jindou'>
+              <view class='{{jindouIndex === 1 ? "active" : ""}}' data-num='1' bindtap='clickjindou' data-jiner='10'>10微金币</view>
+            </view>
+            <view class='jindou'>
+              <view class='{{jindouIndex === 2 ? "active" : ""}}' data-num='2' bindtap='clickjindou' data-jiner='200'>200微金币</view>
+            </view>
+             <view class='jindou'>
+              <view class='{{jindouIndex === 3 ? "active" : ""}}' data-num='3' bindtap='clickjindou' data-jiner='500'>500微金币</view>
+            </view>
+          </view>
+          <view class='grid col-3 margin-bottom text-center'>
+            <view class='jindou'>
+              <view class='{{jindouIndex === 4 ? "active" : ""}}' data-num='4' bindtap='clickjindou' data-jiner='1000'>1000微金币</view>
+            </view>
+            <view class='jindou'>
+              <view class='{{jindouIndex === 5 ? "active" : ""}}' data-num='5' bindtap='clickjindou' data-jiner='5000'>5000微金币</view>
+            </view>
+             <view class='jindou'>
+              <view class='{{jindouIndex === 6 ? "active" : ""}}' data-num='6' bindtap='clickjindou' data-jiner='10000'>10000微金</view>
+            </view>
+          </view>
+        </view>
+        <view class="cu-bar bg-white">
+          <!-- <view class="action margin-0 flex-sub text-green " bindtap="hideModal">
+            <text class="icon-moneybag"></text>微信支付</view> -->
+          <view class="action margin-0 flex-sub text-green solid-left" bindtap="hideModal">取消</view>
+          <view class="action margin-0 flex-sub  solid-left" bindtap="yanORno">确定</view>
+        </view>
+      </view>
+</view>

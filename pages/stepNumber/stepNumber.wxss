@@ -1,0 +1,44 @@
+/* pages/stepNumber/stepNumber.wxss */
+.duihuan {
+  width: 100%;
+  height: 790rpx;
+  position: relative;
+}
+.duihuan image{
+  width: 100%;
+  height: 790rpx;
+}
+.duihuan-ab {
+  position: absolute;
+  left: 0;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+.duihuan-bushu {
+  margin-top: 333rpx;
+  font-size:84rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  line-height:52rpx;  
+}
+.duihuan-kedui {
+  margin-top: 164rpx;
+  font-size:60rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:52rpx;
+}
+.tianjiadizhi {
+  padding: 40rpx 0;
+}
+.tianjiadizhi button {
+  width:690rpx;
+  height:90rpx;
+  background:rgba(73,171,242,1);
+  border-radius:10rpx; 
+}

@@ -1,0 +1,35 @@
+<!--pages/records/records.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" >
+      <text class='icon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>兑换记录</view>
+  </view>
+</view>
+<view class='records cu-list menu'>
+    <view class="cu-item" wx:for="{{bushuList}}">
+      <view class="content padding-tb-sm">
+        <view>
+          <text class="icon-refund text-orange margin-right-xs"></text>兑换金豆</view>
+        <view class="text-gray text-sm">
+          <text class="icon-infofill margin-right-xs text-white"></text> {{item.addTime}}</view>
+      </view>
+      <view class="action text-red">
+        <!-- <switch class="switch-sex sm" bindchange="switchSex"></switch> -->
+        +{{item.goldNumber}}
+      </view>
+    </view>
+    <view class="cu-item" wx:for="{{goodsList}}">
+      <view class="content padding-tb-sm">
+        <view>
+          <text class="icon-refund text-orange margin-right-xs"></text>兑换商品({{item.productName}})</view>
+        <view class="text-gray text-sm">
+          <text class="icon-infofill margin-right-xs text-white"></text> {{item.time}}</view>
+      </view>
+      <view class="action text-green">
+        <!-- <switch class="switch-sex sm" bindchange="switchSex"></switch> -->
+        -{{item.productNum}}
+      </view>
+    </view>    
+</view>

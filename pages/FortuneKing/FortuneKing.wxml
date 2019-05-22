@@ -1,0 +1,41 @@
+<!--pages/FortuneKing/FortuneKing.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" >
+      <text class='icon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>财富排行榜</view>
+  </view>
+</view>  
+<view class='wang-zhe-bang'>
+  <scroll-view scroll-x class="bg-white nav text-center">
+  <view class="cu-item {{index==TabCur?'text-blue cur':''}}" wx:for="{{tabList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+    {{tabList[index]}}
+  </view>
+</scroll-view>
+
+   <view class='mumu-ul'  wx:if="{{codeIndex === 0}}">
+      <view class='mumu-li' wx:for="{{yucePaiLIst}}">
+        <image src='/images/laba.png'></image>
+        <view class='mumu-li-l mumu-li-1'>
+          <view>{{item.userName}}</view>
+          <view>热血预言家</view>
+        </view>
+        <view class='mumu-li-l mumu-li-2'></view>
+        <view class='mumu-li-l mumu-li-3 text-red'>{{item.num}}次</view>
+      </view>                       
+   </view>
+
+
+   <view class='mumu-ul' wx:if="{{codeIndex === 1}}">
+      <view class='mumu-li' wx:for="{{yucePaiLIst1}}">
+        <image src='/images/laba.png'></image>
+        <view class='mumu-li-l mumu-li-1'>
+          <view>{{item.userName}}</view>
+          <view>财富王者</view>
+        </view>
+        <view class='mumu-li-l mumu-li-2'></view>
+        <view class='mumu-li-l mumu-li-3 text-red'>{{item.goldNum}}金豆</view>
+      </view>                       
+   </view>  
+</view>

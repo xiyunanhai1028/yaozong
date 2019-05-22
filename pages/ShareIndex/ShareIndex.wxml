@@ -1,0 +1,48 @@
+<!--pages/ShareIndex/ShareIndex.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>{{codeIndex === "1" ? "上证指数":"恒生指数"}}</view>
+  </view>
+</view>
+<view class='zhishu'>
+<view class='zhishu-title'>
+  <view class='zhishu-title-l'>{{codeIndex === '1' ? "上证指数":"恒生指数"}}</view>
+  <view class='zhishu-title-l zhishu-title-r' >{{codeIndex === '1' ? "sh000001":"1A00002"}}</view>
+  <view class='zhishu-title-l zhishu-title-r'>时间：{{gupiaoData.time}}</view>
+</view>
+<!-- <view class='zhishu-title-bishi'>
+  <view class='zhishu-title-l'>闭市 02-27  15:    00：  00</view>
+</view> -->
+<view class='grid col-3 text-left'>
+  <view class='xq1' style="color:{{gupiaoData.nowPrice - gupiaoData.yestodayClosePrice > 0 ? 'red': 'rgb(25,179,76)'}};"> {{gupiaoData.nowPrice}}
+    <view class='grid col-3 text-left'><view style='font-size:25rpx;'>{{gupiaoData.nowPrice - gupiaoData.yestodayClosePrice > 0 ? '+': ''}}{{(gupiaoData.diff_money)}}</view><view  style='font-size:25rpx;padding-left:15rpx;'>{{gupiaoData.diff_rate}}%</view></view>
+  </view>
+  <view class='xq2'  style='line-height:100rpx;'>今  开   {{gupiaoData.todayOpenPrice}} </view>
+  <view class='xq3' style='line-height:100rpx;'>昨  闭   {{gupiaoData.yestodayClosePrice}}</view>
+</view>
+<view class='grid col-3 text-left'>
+  <view class='xq2'>最  低   {{gupiaoData.minPrice}}</view>
+  <view class='xq2'>最  高   {{gupiaoData.maxPrice}} </view>
+  <view class='xq3'>振  幅   {{gupiaoData.swing}}%</view>
+</view>
+<view class='grid col-2 margin-bottom text-left'>
+  <!-- <view class='xq2'>最  低   {{gupiaoData.min}}</view> -->
+  <view class='xq2'>成交额   {{gupiaoData.tradeAmount}} </view>
+  <view class='xq3'>成交量   {{gupiaoData.tradeNum}}</view>
+</view>
+</view>
+<view>
+<scroll-view scroll-x class="bg-white nav">
+  <view class="flex text-center">
+    <view class="cu-item flex-sub {{index==TabCur?'text-blue cur':''}}" wx:for="{{tabList}}" wx:key bindtap="tabSelect" data-id="{{index}}">
+      {{item}}
+    </view>
+  </view>
+</scroll-view>
+</view>
+<view class='ShareIndex'>
+ <ec-canvas class='canvas-index' id="mychart-dom-area" canvas-id="mychart-area" ec="{{ ec }}"></ec-canvas>
+</view>

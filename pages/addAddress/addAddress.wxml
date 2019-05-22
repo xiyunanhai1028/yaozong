@@ -1,0 +1,48 @@
+<!--pages/addAddress/addAddress.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none">
+      <text class='icon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>添加地址</view>
+  </view>
+</view>
+<view class='addAddress'>
+<form>
+  <view class="cu-form-group margin-top">
+    <view class="title">姓名</view>
+    <input type='text' placeholder="请输入姓名" value="{{name}}" bindinput="bindKeyInput"></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">联系电话</view>
+    <input type='number' placeholder="输入联系电话" value="{{phone}}"  bindinput="bindPhoneInput"></input>
+    <view class="cu-capsule radius">
+      <view class="cu-tag bg-blue">
+        +86
+      </view>
+      <view class="cu-tag line-blue">
+        中国大陆
+      </view>
+    </view>
+  </view>  
+  <view class="cu-form-group">
+    <view class="title">地址选择</view>
+    <picker mode="region" bindchange="RegionChange" value="{{region}}" custom-item="{{customItem}}">
+      <view class="picker">
+        {{region[0]}}，{{region[1]}}，{{region[2]}}
+      </view>
+    </picker>
+  </view>
+    <view class="cu-form-group">
+    <view class="title">详细地址:</view>
+    <input placeholder="街道 , 楼牌号" bindinput="bindAddressInput" value="{{rddress}}"  ></input>
+  </view>
+  <view class="cu-form-group">
+    <view class="title">设为默认地址</view>
+    <switch class="blue sm" checked="{{switchBool}}" bindchange="switch1Change"></switch>
+  </view>  
+</form>
+</view>
+<view class='footer'>
+  <button class='cu-btn bg-blue text-right cu-list-duihuan' bindtap='baoDizhi'>保存地址</button>
+</view>

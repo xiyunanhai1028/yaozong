@@ -1,0 +1,66 @@
+/* pages/ShareIndex/ShareIndex.wxss */
+page {
+  background-color: #fff;
+}
+.zhishu {
+  padding: 30rpx 30rpx;
+  padding-top: 180rpx;
+  background-color: #fff;
+}
+.zhishu-title-l {
+  display: inline-block;
+}
+.zhishu-title-r {
+  padding-left: 30rpx;
+}
+.ShareIndex {
+  width: 100%;
+  height: 700rpx;
+}
+.canvas-index {
+  background-color: #fff;
+}
+.zhishu-title {
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:63rpx;  
+}
+.zhishu-title-bishi {
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  line-height:63rpx;  
+}
+.xq1 {
+  text-align: left;
+  font-size:36rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:bold;
+  color:rgba(236,64,64,1);
+  line-height:53rpx;  
+}
+.xq2 {
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:53rpx;  
+}
+.xq3 {
+  font-size:28rpx;
+  font-family:PingFangSC-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:53rpx;  
+}
+.xq4 view {
+font-size:24rpx;
+font-family:PingFangSC-Regular;
+font-weight:bold;
+color:rgba(236,64,64,1);
+line-height:53rpx;
+text-align: left;
+}

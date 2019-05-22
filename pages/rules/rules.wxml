@@ -1,0 +1,15 @@
+<!--pages/rules/rules.wxml-->
+<view class='cu-custom'>
+  <view class="cu-bar fixed bg-white" style="height:{{CustomBar}}px;padding-top:{{StatusBar}}px;">
+    <navigator class='action' open-type="navigateBack" delta="1" hover-class="none" >
+      <text class='icon-back'></text> 返回
+    </navigator>
+    <view class='content' style='top:{{StatusBar}}px;'>活动规则</view>
+  </view>
+</view>  
+<view class='rules text-center'>
+<view class='rules-title'>2019活动内容规则</view>
+<view class='rule-li text-left' wx:for="{{listData}}">
+{{index + 1}}、{{ item.name}}
+</view>
+</view>
